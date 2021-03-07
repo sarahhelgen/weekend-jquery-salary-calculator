@@ -7,7 +7,7 @@ function onReady(){
     $( '#addSubmitButton ').on( 'click ', addEmployee );
     //init display
     calculateMonthlyCosts();
-    $( '#clickDeleteButton ').on( 'click', deleteEmployee );
+    $('#employeeTable').on( 'click', '.deleteRowButton', deleteRow);
 }
 //end onReady
 
@@ -74,7 +74,8 @@ function calculateMonthlyCosts(){
     }
 } // end calculateMonthlyCosts
 
-function deleteEmployee(){
-    $(this).parent().parent().remove();
-
-}//end deleteEmployee
+function deleteRow(){
+    let deletedText = $( this ).closest('tr').children('td.salary').text();
+    console.log( deletedText );
+    console.log( 'in deleteRow:', $( this ).parent().parent().fadeOut() );
+}
