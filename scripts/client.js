@@ -5,6 +5,9 @@ let employeeInfo = [];
 function onReady(){
     console.log( 'in JQ');
     $( '#addSubmitButton ').on( 'click ', addEmployee );
+    //init display
+    calculateMonthlyCosts();
+    $( '#clickDeleteButton ').on( 'click', deleteEmployee );
 }
 //end onReady
 
@@ -28,7 +31,10 @@ function addEmployee(){
     $( '#idIn').val( '');
     $( '#titleIn').val( '');
     $( '#salaryIn').val( '');
-
+    //calculate monthly costs
+    calculateMonthlyCosts();
+    //update DOM
+    displayMonthlyCosts();
 }//end addEmployee
 
 function displayEmployees(){
@@ -51,3 +57,25 @@ for( let i =0; i<employeeInfo.length; i++){
 //append each item to DOM
 }//end displayEmployees
 
+function calculateMonthlyCosts(){
+    console.log( 'in calculateMonthlyCosts');
+    //loop through employees array
+    let monthlyCosts = 0;
+    for( let i=0; i<employeeInfo.length; i++){
+      //for each employee, add total of all salaries
+        monthlyCosts += Number(employeeInfo[i].salary);
+       //divide by 12 for monthly salary
+       monthlyCosts /= 12; 
+    }//end for
+    //display monthly costs - if monthly costs >20000, turn the background red
+}   let el = $( '#totalMonthlyCost');
+    el.empty();
+    el.append( monthlyCosts );
+    if( monthlyCosts >= 20000){
+        $( '#totalMonthlyCost').css( "background-color", "red");
+    }
+// end calculateMonthlyCosts
+
+function deleteEmployee(){
+
+}//end deleteEmployee

@@ -1,9 +1,16 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Weekend JQuery Salary Calculator Challenge
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+-Created and linked HTML, CSS, Javascript, and JQuery files with appropriate interface
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+-Created click event to capture user inputs
+
+-Created functions to process information and capture it on the DOM
+
+-Created function to calculate total monthly costs
+
+
+
