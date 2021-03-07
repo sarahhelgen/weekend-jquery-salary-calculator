@@ -33,8 +33,6 @@ function addEmployee(){
     $( '#salaryIn').val( '');
     //calculate monthly costs
     calculateMonthlyCosts();
-    //update DOM
-    displayMonthlyCosts();
 }//end addEmployee
 
 function displayEmployees(){
@@ -68,14 +66,15 @@ function calculateMonthlyCosts(){
        monthlyCosts /= 12; 
     }//end for
     //display monthly costs - if monthly costs >20000, turn the background red
-}   let el = $( '#totalMonthlyCost');
+  let el = $( '#totalMonthlyCost');
     el.empty();
     el.append( monthlyCosts );
     if( monthlyCosts >= 20000){
         $( '#totalMonthlyCost').css( "background-color", "red");
     }
-// end calculateMonthlyCosts
+} // end calculateMonthlyCosts
 
 function deleteEmployee(){
+    $(this).parent().parent().remove();
 
 }//end deleteEmployee
